@@ -26,7 +26,7 @@ def gross_for_director(nds,director)
 
     j += 1
   end
-  
+
   gross_for_director
 
   dir_hash[nds[director][name]] = gross_for_director
