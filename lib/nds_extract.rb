@@ -6,7 +6,7 @@ def directors_totals(nds)
   while i < nds.size do
     director = i
 
-    total = gross_for_director(db,director)
+    total = gross_for_director(nds,director)
 
     result [nds[i][:name]]=total
 
@@ -17,11 +17,11 @@ end
 
 # Find a way to accumulate the :worldwide_grosses and return that Integer
 # using director_data as input
-def gross_for_director(db,director)
+def gross_for_director(nds,director)
   gross_for_director = 0
   j=0
-  while j < db[director][:movies].size do
-    gross_for_director += db[director][:movies][j][:worldwide_gross]
+  while j < nds[director][:movies].size do
+    gross_for_director += nds[director][:movies][j][:worldwide_gross]
 
     j += 1
   end
