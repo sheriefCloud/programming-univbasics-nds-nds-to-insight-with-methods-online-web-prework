@@ -18,6 +18,7 @@ end
 # Find a way to accumulate the :worldwide_grosses and return that Integer
 # using director_data as input
 def gross_for_director(nds,director)
+  dir_hash = {}
   gross_for_director = 0
   j=0
   while j < nds[director][:movies].size do
@@ -25,5 +26,8 @@ def gross_for_director(nds,director)
 
     j += 1
   end
+  
   gross_for_director
+
+  dir_hash[nds[director][name]] = gross_for_director
 end
